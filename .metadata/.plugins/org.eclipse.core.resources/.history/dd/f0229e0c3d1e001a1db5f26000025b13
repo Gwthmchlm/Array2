@@ -1,0 +1,32 @@
+package org.cts.test.login;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.seleniumhq.jetty9.server.Authentication.User;
+
+public class BaseClass {
+	static WebDriver driver;
+public static void launchBrowser() {
+	System.setProperty("webdriver.chrome.driver", "E:\\Eclipse workspace\\SeleniumFirst\\driver\\chromedriver.exe");
+	driver = new ChromeDriver();
+}
+public static void url(String url) {
+	driver.get(url);
+}
+public static void title() {
+	driver.getTitle();
+}
+public static void cUrl() {
+	driver.getCurrentUrl();
+}
+public static void User(WebElement e, String id ) {
+	e.sendKeys(id);
+}
+public static void clk(WebElement e) {
+	e.click();
+
+}
+	
+}
+

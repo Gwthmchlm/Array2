@@ -1,0 +1,11 @@
+package org.task.test.login;
+
+public class MainClass extends BaseClass {
+public static void main(String[] args) {
+	launchBowser();
+	url("http://adactin.com/HotelApp/");
+	cUrl();
+	title();
+	
+}
+}

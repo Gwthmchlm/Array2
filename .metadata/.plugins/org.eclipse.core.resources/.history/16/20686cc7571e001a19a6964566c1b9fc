@@ -1,0 +1,10 @@
+package org.cts.test.login;
+
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginPojoClass extends BaseClass {
+public LoginPojoClass() {
+	PageFactory.initElements(driver, this);
+}
+
+}

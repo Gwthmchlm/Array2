@@ -1,0 +1,18 @@
+package org.task.test.login;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class PojoClass3 extends BaseClass {
+public void Pojolass3() {
+	PageFactory.initElements(driver, this);
+}
+@FindBy (id = "radiobutton_0")
+private WebElement radio;
+public WebElement getRadio() {
+	return radio;
+}
+
+
+}

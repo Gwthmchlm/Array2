@@ -1,0 +1,25 @@
+package org.cts.test.login;
+
+import java.sql.Date;
+
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class JunitFirst {
+	static WebDriver driver;
+@BeforeClass
+public static void launchBrowser() {
+	System.setProperty("webdriver.chrome.driver", "E:\\Eclipse workspace\\Maven\\drivers\\chromedriver.exe");
+	driver = new ChromeDriver();
+	driver.get("https://www.facebook.com//");
+}
+@Before
+public void startTime() {
+Date d = new Date();
+System.out.println(d);
+}
+
+
+}

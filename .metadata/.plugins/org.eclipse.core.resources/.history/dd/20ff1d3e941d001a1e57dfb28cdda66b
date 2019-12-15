@@ -1,0 +1,64 @@
+package org.cts.test.login;
+
+import java.util.Date;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import junit.framework.Assert;
+
+public class JUnit2 {
+	static WebDriver driver;
+	@BeforeClass
+	public static void launchBrowser() {
+		System.setProperty("webdriver.chrome.driver", "E:\\Eclipse workspace\\JUnit\\drivers\\chromedriver.exe");
+		ChromeOptions a = new ChromeOptions();
+		ChromeOptions b = a.addArguments("--disable-notifications");
+		driver = new ChromeDriver(b);
+	}
+	@Before
+	public void startTime() {
+		Date d = new Date();
+		System.out.println(d);
+	}
+	@Test
+	public void tc1() {
+		driver.get("https://www.facebook.com/");
+		Assert.assertTrue(driver.getCurrentUrl().equals("https://www.facebook.com/"));
+		WebElement link = driver.findElement(By.id("u_0_b"));
+		link.click();		
+		WebElement user = driver.findElement(By.id("email"));
+		user.sendKeys("9715465054");
+		Assert.assertTrue(user.getAttribute("value").equals("9715465055"));
+		WebElement pass = driver.findElement(By.id("pass"));
+		pass.sendKeys("Myvizhigowtham");
+		WebElement login = driver.findElement(By.id("loginbutton"));
+		login.click();
+	}
+	@Test
+	public void tc2() {
+		driver.get("https://www.facebook.com/");
+		WebElement link = driver.findElement(By.id("u_0_b"));
+		link.click();	
+		WebElement user = driver.findElement(By.id("email"));
+		user.sendKeys("9715465054");
+		WebElement pass = driver.findElement(By.id("pass"));
+		pass.sendKeys("MyvizhiGowtham");
+		String text = pass.getAttribute("value");
+		System.out.println(text);
+		WebElement login = driver.findElement(By.id("loginbutton"));
+		login.click();
+	}
+	@After
+	public void endTime() {
+	Date d = new Date();
+	System.out.println(d);
+	}
+}

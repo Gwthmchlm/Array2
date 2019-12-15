@@ -1,0 +1,21 @@
+package org.cts.test.login;
+
+public class TryCatchFinally {
+private void sample() {
+	String s = "sravani";
+	String s1 = "sarvani";
+	if (s.equals(s1)) {
+		System.out.println(s);
+	} else {
+		try {
+			throw new UserDefException();
+		} catch (UserDefException  e) {
+			e.printStackTrace();
+		}
+		finally {
+			System.out.println("done");
+		}
+	}
+
+}
+}

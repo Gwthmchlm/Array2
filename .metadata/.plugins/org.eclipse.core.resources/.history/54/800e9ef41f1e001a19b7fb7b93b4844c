@@ -1,0 +1,9 @@
+package org.cts.test.login;
+
+public class LengthOfString {
+public static void main(String[] args) {
+	String s = "Hai welcome to IT sector";
+	int l = s.length();
+	System.out.println(l);
+}
+}
